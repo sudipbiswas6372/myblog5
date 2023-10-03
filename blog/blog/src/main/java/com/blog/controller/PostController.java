@@ -12,6 +12,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+//@Controller
+//@ResponseBody
 @RequestMapping("/api/posts")
 public class PostController {
 
@@ -36,6 +38,7 @@ public class PostController {
     //http://localhost:8080/api/posts?pageSize=5
     //http://localhost:8080/api/posts?pageNo=0
     //http://localhost:8080/api/posts?pageNo=0&pageSize=5
+
     @GetMapping
     public List<PostDto> listAllPosts(@RequestParam(value = "pageNo",defaultValue = "0",required = false)int pageNo,
                                       @RequestParam(value = "pageSize",defaultValue = "10",required = false)int pageSize,
